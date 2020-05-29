@@ -1,0 +1,56 @@
+<mvc:View
+   xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+
+   <Table id="idBooksTable"
+		items="{
+			path: '/Persons'
+		}"
+		growing="true"
+		growingThreshold="10">
+	
+		<columns>
+			<Column>
+				<Text text="Person ID" />
+			</Column>
+			<Column>
+				<Text text="ISBN" />
+			</Column>
+			<Column>
+				<Text text="First Name" />
+			</Column>
+			<Column>
+				<Text text="Last Name" />
+			</Column>
+			<Column>
+				<Text text="Date Checkout"/>
+			</Column>
+			<Column>
+				<Text text="Date Return"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{Person_ID}"
+						text="{ISBN_BOOK}"/>
+					<Text text="{FIRST_NAME}" />
+					<Text text="{LAST_NAME}"/>
+					<Text text="{ 
+							path: 'DATE_CHECKOUT',
+							type: 'sap.ui.model.type.Date'
+               			}" 
+					/>
+					<Text text="{ 
+						path: 'DATE_RETURN',
+						type: 'sap.ui.model.type.Date'
+					   }" 
+				/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+   
+</mvc:View>
